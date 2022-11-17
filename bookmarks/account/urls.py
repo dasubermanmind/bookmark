@@ -22,4 +22,6 @@ urlpatterns = [
          name='password_reset_complete'),
     # home
     path('', views.dashboard, name='dashboard'),
+    # register
+    path('register/', views.register, name='register'),
 ]
