@@ -2,7 +2,10 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
 
+
 urlpatterns = [
+     # home
+    path('', views.dashboard, name='dashboard'),
     path('login', auth_views.LoginView.as_view(), name='login'),
     
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
@@ -20,8 +23,6 @@ urlpatterns = [
     path('password-reset/complete/',
          auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
-    # home
-    path('', views.dashboard, name='dashboard'),
     # register
     path('register/', views.register, name='register'),
 ]
