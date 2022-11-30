@@ -10,7 +10,6 @@ from .models import Profile
 def dashboard(request):
     return render(request, 'account/dashboard.html' , {'section': 'dashboard'})
 
-
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -34,7 +33,7 @@ def user_login(request):
 
 def register(request):
     if request.method == 'POST':
-        user_form = UserRegistrationForm(request.POST)
+        user_form: UserRegistrationForm = UserRegistrationForm(request.POST)
         if user_form.is_valid():
             
             new_user = user_form.save(commit=False)
